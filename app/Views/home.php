@@ -11,7 +11,9 @@
         <a href="<?= site_url('about') ?>">About</a> |
         <a href="<?= site_url('customers') ?>">Customers</a> |
         <a href="<?= site_url('users') ?>">Users</a> |
-        <a href="<?= site_url('products') ?>">Products</a>
+        <a href="<?= site_url('products') ?>">Products</a> |
+        <a href="<?= site_url('sales/new') ?>">Record Sale</a> |
+        <a href="<?= site_url('sales') ?>">Sales History</a>
     </nav>
 
     <hr>
@@ -21,10 +23,13 @@
 
         <p>
             Logged in as:
-            <?= session()->get('username') ?>
+            <?= esc(session()->get('username') ?? '') ?>
         </p>
 
-        <a href="<?= site_url('logout') ?>">Logout</a>
+        <form action="<?= site_url('logout') ?>" method="post">
+            <?= csrf_field() ?>
+            <button type="submit">Logout</button>
+        </form>
 
     <?php endif; ?>
 

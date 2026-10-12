@@ -18,13 +18,5 @@ abstract class BaseController extends Controller
 
         parent::initController($request, $response, $logger);
     }
-    protected function requireLogin()
-    {
-        if (!session()->get('logged_in')) {
-            return redirect()->to('/login');
-        }
-
-        return null;
-    }
 
 }

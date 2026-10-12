@@ -11,10 +11,11 @@
 
     <?php if (session()->getFlashdata('error')): ?>
         <p style="color:red;">
-            <?= session()->getFlashdata('error') ?>
+            <?= esc(session()->getFlashdata('error')) ?>
         </p>
     <?php endif; ?>
-    <form action="/login" method="post">
+    <form action="<?= site_url('login') ?>" method="post">
+        <?= csrf_field() ?>
 
         <label>Username</label>
         <br>
