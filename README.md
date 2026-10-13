@@ -13,7 +13,7 @@ This project builds a database-backed Point-of-Sale application using CodeIgnite
 - **Live application:** Pending InfinityFree deployment — replace this line with the working website URL before submission.
 - **Database export:** [`database/pos_db.sql`](database/pos_db.sql)
 - **Local testing:** The maintainer reports that manual testing passed, including testing after sample-data cleanup.
-- **Hosted testing:** Pending deployment.
+- **Live application:** https://ventura-pos-fa.infinityfreeapp.com/index.php/login
 
 FA4 requires both the raw project files with a database export and a working hosted application. The repository alone does not complete the hosted submission requirement.
 
