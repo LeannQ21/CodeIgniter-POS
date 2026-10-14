@@ -18,6 +18,8 @@ $errors = session()->getFlashdata('errors') ?? [];
 <head>
     <meta charset="UTF-8">
     <title><?= esc($title) ?></title>
+
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 </head>
 
 <body>
