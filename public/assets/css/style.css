@@ -267,3 +267,36 @@ td.actions {
     border: 1px dashed #cbd5e1;
     font-size: 12px;
 }
+
+.product-image-section {
+    max-width: 600px;
+    margin-top: 25px;
+    padding: 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+.current-product-image {
+    margin: 15px 0;
+}
+
+.form-help {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.image-upload-form {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.image-upload-form input[type="file"] {
+    margin: 10px 0 18px;
+    background: #f8fafc;
+}

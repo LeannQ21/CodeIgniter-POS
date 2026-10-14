@@ -75,30 +75,45 @@ $errors = session()->getFlashdata('errors') ?? [];
     </form>
 
     <?php if ($isEditing): ?>
+    <section class="product-image-section">
         <h2>Product Image</h2>
 
-        <?= view('partials/product_image', [
-            'productImage' => $product['image'] ?? null,
-        ]) ?>
+        <div class="current-product-image">
+            <?= view('partials/product_image', [
+                'productImage' => $product['image'] ?? null,
+            ]) ?>
+        </div>
 
-        <p>Choose a JPG or PNG image, up to 2 MB.</p>
-        <p>Save any product-detail changes before uploading an image.</p>
+        <p class="form-help">
+            Choose a JPG or PNG image up to 2 MB.
+        </p>
 
-        <form action="<?= site_url('products/image/' . $product['id']) ?>" method="post" enctype="multipart/form-data">
+        <form
+            action="<?= site_url('products/image/' . $product['id']) ?>"
+            method="post"
+            enctype="multipart/form-data"
+            class="image-upload-form"
+        >
             <?= csrf_field() ?>
 
-            <label for="image">Product image</label>
-            <br>
+            <label for="image">Choose Product Image</label>
 
-            <input id="image" type="file" name="image" accept=".jpg,.jpeg,.png" required>
+            <input
+                id="image"
+                type="file"
+                name="image"
+                accept="image/jpeg,image/png"
+                required
+            >
 
-            <br><br>
-
-            <button type="submit">Save Product Image</button>
+            <button type="submit">Upload Image</button>
         </form>
-    <?php else: ?>
-        <p>After creating this product, open Edit to upload its image.</p>
-    <?php endif; ?>
+    </section>
+<?php else: ?>
+    <p class="form-help">
+        Save the product first, then click Edit to upload its image.
+    </p>
+<?php endif; ?>
 
     <br>
 
